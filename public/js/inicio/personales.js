@@ -10,8 +10,19 @@ function datosPersonalesInicio(idUsuario) {
             $('#nombre').text(respuesta['nombrePersona']);
             $('#telefono').text(respuesta['telefono']);
             $('#correo').text(respuesta['correo']);
-            $('#edad').text(respuesta['fechaNacimiento']);
+            $('#edad').text(calcularEdad(respuesta['fechaNacimiento']));
         }
     });
     return false;
+}
+
+function calcularEdad(dateString) {
+    let hoy = new Date();
+    let fechaNacimiento = new Date(dateString);
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    let diferenciasMeses = hoy.getMonth() - fechaNacimiento.getMonth();
+    if (diferenciasMeses < 0 || (diferenciasMeses === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+        edad--;
+    }
+    return edad;
 }

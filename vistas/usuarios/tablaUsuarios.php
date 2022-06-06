@@ -1,6 +1,8 @@
 <?php 
     include "../../clases/Conexion.php";
+    include "../../clases/Usuarios.php";
     $con = new Conexion();
+    $obj = new Usuarios();
     $conexion = $con->Conectar();
     $sql = "SELECT 
                 usuarios.id_usuario AS idUsuario,
@@ -50,7 +52,11 @@
             <td class="text-center"><?php echo $mostrar['paterno'];?></td>
             <td class="text-center"><?php echo $mostrar['materno'];?></td>
             <td class="text-center"><?php echo $mostrar['nombrePersona'];?></td>
-            <td class="text-center"><?php echo $mostrar['fechaNacimiento'];?></td>
+            <td class="text-center">
+                <?php 
+                    echo $obj->calculaTiempo($mostrar['fechaNacimiento'], date('Y-m-d'))[0];
+                ?>
+            </td>
             <td class="text-center"><?php echo $mostrar['telefono'];?></td>
             <td class="text-center"><?php echo $mostrar['correo'];?></td>
             <td class="text-center"><?php echo $mostrar['nombreUsuario'];?></td>

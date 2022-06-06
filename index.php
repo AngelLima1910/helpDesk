@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./public/img/logoicono.ico" type="image/x-icon">
     <title>Login de usuario</title>
     <link rel="stylesheet" href="./public/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/login.css">
@@ -48,7 +49,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Si no tiene una credencial llama al: 5555555555
+                    Si no tiene una credencial llama al: 5547601941
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
